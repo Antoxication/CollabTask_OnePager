@@ -1,0 +1,176 @@
+/* =========================
+   Root & Resets
+   ========================= */
+@charset "UTF-8";
+
+:root {
+  --font-sans: "Segoe UI";
+  --font-mono: "Consolas";
+  --fg: #1a1a1a;
+  --bg: #ffffff;
+  --accent: #008ca8;
+  --border: rgba(0,0,0,.18);
+}
+
+html {
+  color: var(--fg);
+  background: var(--bg);
+  font-family: var(--font-sans);
+  font-size: 11.7px;
+  line-height: 1.55;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   Page layout (for screen)
+   ========================= */
+
+@media screen {
+  body {
+    padding: 15mm 20mm;
+    max-width: 210mm;
+    margin: auto;
+  }
+}
+
+/* =========================
+   Page size & margins (for PDF)
+   ========================= */
+@page {
+  size: letter; 
+  margin: 22mm 16mm 20mm 16mm; /* top right bottom left */
+}
+
+/* Puppeteer margins are defined in export.js
+   so we don't double margins here */
+
+/* =========================
+   Column layout
+   ========================= */
+
+main.two-col {
+  column-count: 2;
+  column-gap: 18mm;
+  column-fill: auto;
+  margin-top: 5mm;
+}
+
+section, h3, ul, p {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* =========================
+   Headings
+   ========================= */
+
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 .6em;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 4mm;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2mm;
+}
+
+h2 {
+  font-size: 1.3rem;
+  color: var(--accent);
+  border-bottom: 1px solid rgba(0,0,0,.15);
+  padding-bottom: 1mm;
+}
+
+h3 {
+  font-size: 1.05rem;
+  color: var(--accent);
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  padding-bottom: 1mm;
+  margin-top: 6mm;
+}
+
+/* =========================
+   Text elements
+   ========================= */
+
+p {
+  margin: .6em 0;
+  text-align: justify;
+}
+
+ul {
+  padding-left: 1.3em;
+  margin: .4em 0 .8em;
+}
+
+li {
+  margin: .25em 0;
+}
+
+/* =========================
+   Accent elements
+   ========================= */
+
+strong {
+  color: #000;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: .95em;
+  color: #008ca8;
+  background: rgba(0,0,0,.04);
+  padding: 0 .25em;
+  border-radius: 2px;
+}
+
+/* =========================
+   Table style (if needed)
+   ========================= */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 4mm 0;
+  font-size: 0.95em;
+}
+
+th {
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid #ccc;
+  padding: 4px 0;
+}
+
+td {
+  border-bottom: 1px solid #ccc;
+  padding: 4px 0;
+}
+
+tr:last-child th,
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================
+   Print adjustments
+   ========================= */
+
+html, body {
+  overflow: hidden;
+  height: auto;
+  min-height: 100%;
+}
+
+/* Avoid extra page breaks */
+main.two-col > * {
+  break-inside: avoid;
+}
