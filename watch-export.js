@@ -41,16 +41,15 @@ async function exportPdf() {
           width: 100%;
           color: #444;
           padding: 4mm 10mm 0 10mm;
-          display: flex;
-          justify-content: space-between;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
           align-items: center;
         ">
           <div style="text-align: left;">
-            8INF978 — Sujet spécial en jeux vidéo
+            8INF950 — Sujets spéciaux
           </div>
-          <div style="text-align: center; flex-grow: 1;">
-            CollabTask — One-Pager<br>
-            v1.0
+          <div style="text-align: center;">
+            CollabTask — One-Pager<br>v1.0
           </div>
           <div style="text-align: right;">
             <img
@@ -69,8 +68,8 @@ async function exportPdf() {
           width: 100%;
           color: #444;
           padding: 0 8mm;
-          display: flex;
-          justify-content: space-between;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
           align-items: center;
         ">
           <div style="text-align: left;">
